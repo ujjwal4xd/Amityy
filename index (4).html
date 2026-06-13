@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Amity Institute — Biratnagar | A Key For Success</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #0B2042;
+    --navy-deep: #071630;
+    --navy-soft: #16335E;
+    --gold: #C9A24B;
+    --gold-light: #E4CC8C;
+    --paper: #F6F3EC;
+    --paper-dim: #ECE7DA;
+    --ink: #1B2230;
+    --ink-soft: #5B6478;
+    --line: rgba(11,32,66,0.12);
+    --radius: 2px;
+    --display: "Fraunces", serif;
+    --body: "Inter", sans-serif;
+    --mono: "Space Mono", monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: var(--body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+
+  .container{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- Utility ---------- */
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before{
+    content:"";
+    display:inline-block;
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+  .eyebrow.center{ justify-content:center; }
+  .eyebrow.center::before{ display:none; }
+  .eyebrow.dark{ color: var(--gold-light); }
+
+  h1,h2,h3,h4{
+    font-family: var(--display);
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 16px 30px;
+    border: 1px solid transparent;
+    border-radius: var(--radius);
+    cursor:pointer;
+    transition: all .25s ease;
+    white-space: nowrap;
+  }
+  .btn-gold{
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+  .btn-gold:hover{ background: var(--gold-light); }
+  .btn-outline{
+    background: transparent;
+    border-color: var(--navy);
+    color: var(--navy);
+  }
+  .btn-outline:hover{ background: var(--navy); color:#fff; }
+  .btn-outline-dark{
+    background: transparent;
+    border-color: var(--navy);
+    color: var(--navy);
+  }
+  .btn-outline-dark:hover{ background: var(--navy); color:#fff; }
+
+  /* ---------- Header ---------- */
+  .site-header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 100;
+    background: rgba(11,32,66,0.0);
+    backdrop-filter: blur(0px);
+    transition: background .35s ease, backdrop-filter .35s ease, box-shadow .35s ease, border-color .35s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .site-header.scrolled{
+    background: rgba(246,243,236,0.88);
+    backdrop-filter: blur(10px);
+    border-color: var(--line);
+    box-shadow: 0 8px 30px rgba(11,32,66,0.06);
+  }
+  .site-header.scrolled .brand, .site-header.scrolled .nav-links a{ color: var(--navy); }
+  .site-header.scrolled .brand-text .sub{ color: var(--ink-soft); }
+  .site-header.scrolled .nav-toggle span{ background: var(--navy); }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 22px 32px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    color:#fff;
+    transition: color .3s ease;
+  }
+  .brand-mark{
+    width: 46px; height:46px;
+    border: 1.5px solid var(--gold);
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--gold);
+    background: var(--navy);
+    flex-shrink:0;
+    position:relative;
+    overflow:hidden;
+  }
+  .brand-mark img{
+    width:100%; height:100%;
+    object-fit: cover;
+  }
+  .brand-mark::after{
+    content:"";
+    position:absolute;
+    inset: -5px;
+    border: 1px solid rgba(201,162,75,0.35);
+    border-radius: 50%;
+  }
+  .brand-text{ line-height: 1.2; color: var(--navy); }
+  .brand-text .name{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.18rem;
+    letter-spacing: 0.01em;
+  }
+  .brand-text .sub{
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+
+  .nav-links{
+    display:flex;
+    align-items:center;
+    gap: 38px;
+  }
+  .nav-links a{
+    color: var(--navy);
+    font-size: 0.92rem;
+    font-weight: 500;
+    position:relative;
+    transition: color .2s ease;
+  }
+  .nav-links a:hover{ color: var(--gold); }
+  .nav-links a::after{
+    content:"";
+    position:absolute;
+    left:0; bottom:-8px;
+    width:0; height:1px;
+    background: var(--gold);
+    transition: width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+
+  .nav-right{ display:flex; align-items:center; gap: 28px; }
+
+  .nav-toggle{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding: 6px;
+  }
+  .nav-toggle span{
+    width: 24px; height: 1.5px; background: var(--navy);
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background: var(--paper);
+    padding-top: 150px;
+    overflow:hidden;
+  }
+  .hero-top{
+    max-width: 880px;
+    margin: 0 auto;
+    text-align:center;
+    padding: 0 32px 56px;
+  }
+  .hero-top .eyebrow{ justify-content:center; }
+  .hero-top .eyebrow::before{ display:none; }
+  .hero-top h1{
+    font-size: clamp(2.4rem, 5.2vw, 4rem);
+    color: var(--navy);
+    margin-bottom: 22px;
+  }
+  .hero-top h1 em{
+    font-style: italic;
+    color: var(--gold);
+  }
+  .hero-top p{
+    font-size: 1.06rem;
+    color: var(--ink-soft);
+    max-width: 56ch;
+    margin: 0 auto 36px;
+  }
+  .hero-actions{ display:flex; gap:18px; flex-wrap:wrap; justify-content:center; }
+
+  .hero-trust{
+    margin-top: 56px;
+    text-align:center;
+  }
+  .hero-trust .label{
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+  }
+  .hero-trust-row{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    gap: 36px;
+    font-family: var(--display);
+    font-weight: 600;
+    color: var(--ink-soft);
+    opacity: 0.75;
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+  }
+  .hero-trust-row span{ white-space: nowrap; }
+
+  .hero-visual{
+    position:relative;
+    margin-top: 64px;
+    border-radius: 0 0 120px 120px;
+    overflow:hidden;
+    height: min(560px, 60vw);
+  }
+  .hero-visual img{
+    width:100%; height:100%;
+    object-fit: cover;
+    object-position: center 35%;
+  }
+  .hero-scroll{
+    position:absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index:2;
+    color: rgba(255,255,255,0.85);
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+  .hero-scroll .ring{
+    width: 36px; height:36px;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 1rem;
+  }
+
+  /* ---------- Section generic ---------- */
+  section{ padding: 120px 0; position:relative; }
+  .section-head{ max-width: 640px; margin-bottom: 64px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-head h2{ font-size: clamp(2rem, 3.6vw, 2.8rem); }
+  .section-head p{ color: var(--ink-soft); font-size: 1.02rem; margin-top: 16px; }
+
+  /* ---------- About ---------- */
+  .about{ background: var(--paper); }
+  .about-grid{
+    display:grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 72px;
+    align-items:center;
+  }
+  .about-portrait{
+    position:relative;
+  }
+  .about-portrait .frame{
+    border: 1px solid var(--navy);
+    padding: 18px;
+    position:relative;
+  }
+  .about-portrait img{
+    width:100%;
+    aspect-ratio: 4/5;
+    object-fit: cover;
+    filter: grayscale(15%) contrast(1.05);
+  }
+  .about-portrait .caption{
+    margin-top: 22px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    gap: 20px;
+  }
+  .about-portrait .caption .name{
+    font-family: var(--display);
+    font-size: 1.3rem;
+    font-weight:600;
+    color: var(--navy);
+  }
+  .about-portrait .caption .role{
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .about-portrait .quote-mark{
+    position:absolute;
+    top: -28px; left: -10px;
+    font-family: var(--display);
+    font-size: 6rem;
+    color: var(--gold);
+    line-height:1;
+    opacity:0.55;
+  }
+
+  .about-copy h2{ margin-bottom: 28px; font-size: clamp(2rem, 3.4vw, 2.6rem); }
+  .about-copy p{
+    color: var(--ink-soft);
+    font-size: 1.04rem;
+    margin-bottom: 22px;
+  }
+  .about-copy p.lead{
+    color: var(--ink);
+    font-size: 1.18rem;
+    font-family: var(--display);
+    font-weight:500;
+    line-height:1.55;
+  }
+  .about-stats{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+    margin-top: 40px;
+    padding-top: 36px;
+    border-top: 1px solid var(--line);
+  }
+  .about-stats .stat .num{
+    font-family: var(--display);
+    font-size: 2.1rem;
+    font-weight:700;
+    color: var(--navy);
+  }
+  .about-stats .stat .label{
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  /* ---------- Courses ---------- */
+  .courses{ background: var(--navy-deep); color:#fff; }
+  .courses .section-head h2{ color:#fff; }
+  .courses .section-head p{ color: rgba(255,255,255,0.62); }
+
+  .course-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .course-card{
+    background: var(--navy-deep);
+    padding: 40px 30px;
+    position:relative;
+    transition: background .3s ease;
+    min-height: 360px;
+    display:flex;
+    flex-direction:column;
+  }
+  .course-card:hover{ background: var(--navy-soft); }
+  .course-card .index{
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    margin-bottom: 30px;
+  }
+  .course-card .devnagari{
+    font-family: var(--display);
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    margin-bottom: 6px;
+  }
+  .course-card h3{
+    color:#fff;
+    font-size: 1.32rem;
+    margin-bottom: 16px;
+    font-weight:600;
+  }
+  .course-card p{
+    color: rgba(255,255,255,0.58);
+    font-size: 0.92rem;
+    flex-grow:1;
+  }
+  .course-card .meta{
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display:flex;
+    flex-direction:column;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.42);
+    text-transform:uppercase;
+  }
+  .course-card .meta span b{
+    color: rgba(255,255,255,0.75);
+    font-weight:600;
+    margin-left:6px;
+  }
+  .course-card .cta-row{
+    margin-top: 22px;
+  }
+  .course-card .cta-row a{
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 4px;
+    transition: opacity .2s ease;
+  }
+  .course-card .cta-row a:hover{ opacity:0.7; }
+
+  /* ---------- Gallery ---------- */
+  .gallery{ background: var(--paper); }
+  .gallery-grid{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 160px;
+    gap: 14px;
+  }
+  .gallery-item{
+    overflow:hidden;
+    position:relative;
+    cursor: pointer;
+    border-radius: var(--radius);
+  }
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover;
+    transition: transform .6s ease, filter .4s ease;
+    filter: saturate(0.92);
+  }
+  .gallery-item:hover img{ transform: scale(1.06); filter: saturate(1.05); }
+  .gallery-item::after{
+    content: attr(data-label);
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding: 14px 16px;
+    background: linear-gradient(to top, rgba(7,22,48,0.78), transparent);
+    color:#fff;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity:0;
+    transition: opacity .3s ease;
+  }
+  .gallery-item:hover::after{ opacity:1; }
+  .gallery-item.tall{ grid-row: span 2; }
+  .gallery-item.wide{ grid-column: span 2; }
+
+  /* lightbox */
+  .lightbox{
+    position:fixed; inset:0; z-index: 1000;
+    background: rgba(7,12,24,0.92);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding: 40px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{
+    max-width: 90vw; max-height: 84vh;
+    object-fit:contain;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .lightbox .lb-caption{
+    position:absolute;
+    bottom: 28px; left:0; right:0;
+    text-align:center;
+    color: var(--gold-light);
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform:uppercase;
+  }
+  .lightbox .lb-close{
+    position:absolute; top: 28px; right: 36px;
+    color:#fff; font-size: 1.8rem;
+    background:none; border:none; cursor:pointer;
+    font-family: var(--body);
+    line-height:1;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{ background: var(--navy); color:#fff; }
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 70px;
+  }
+  .contact .section-head h2{ color:#fff; }
+  .contact .section-head p{ color: rgba(255,255,255,0.62); }
+
+  .form-group{ margin-bottom: 22px; }
+  .form-row{ display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  label{
+    display:block;
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.16em;
+    text-transform:uppercase;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+  }
+  input, select, textarea{
+    width:100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding: 12px 2px;
+    color:#fff;
+    font-family: var(--body);
+    font-size: 0.98rem;
+    transition: border-color .2s ease;
+  }
+  select option{ color:#000; }
+  input:focus, select:focus, textarea:focus{
+    outline:none;
+    border-color: var(--gold);
+  }
+  input::placeholder, textarea::placeholder{ color: rgba(255,255,255,0.32); }
+  textarea{ resize: vertical; min-height: 90px; }
+
+  .form-submit{ margin-top: 12px; }
+
+  .contact-info{
+    border-left: 1px solid rgba(255,255,255,0.12);
+    padding-left: 56px;
+  }
+  .info-block{ margin-bottom: 36px; }
+  .info-block .eyebrow{ margin-bottom: 12px; }
+  .info-block p, .info-block a{
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+    display:block;
+    line-height:1.7;
+  }
+  .info-block a:hover{ color: var(--gold); }
+  .info-note{
+    margin-top: 36px;
+    padding: 20px 22px;
+    border: 1px solid rgba(201,162,75,0.3);
+    background: rgba(201,162,75,0.05);
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.7);
+    font-style: italic;
+  }
+
+  /* ---------- Map ---------- */
+  .map-section{ padding:0; }
+  .map-section iframe{
+    width:100%;
+    height: 460px;
+    border:0;
+    display:block;
+    filter: grayscale(8%) contrast(1.02);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background: var(--navy-deep);
+    color: rgba(255,255,255,0.65);
+    padding: 80px 0 0;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .footer-brand{
+    display:flex;
+    align-items:flex-start;
+    gap: 16px;
+  }
+  .footer-brand .brand-mark{ width:50px; height:50px; }
+  .footer-brand .name{
+    font-family: var(--display);
+    font-size: 1.3rem;
+    color:#fff;
+    font-weight:600;
+    margin-bottom: 10px;
+  }
+  .footer-brand p{ font-size: 0.92rem; max-width: 32ch; }
+  .footer-tagline{
+    margin-top: 16px;
+    font-family: var(--display);
+    font-style: italic;
+    color: var(--gold);
+    font-size: 1.05rem;
+  }
+  .footer-col h4{
+    color:#fff;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform:uppercase;
+    font-family: var(--mono);
+    font-weight:400;
+    margin-bottom: 24px;
+  }
+  .footer-col ul li{ margin-bottom: 14px; }
+  .footer-col ul li a{ font-size: 0.94rem; transition: color .2s ease; }
+  .footer-col ul li a:hover{ color: var(--gold); }
+  .footer-social{
+    display:inline-flex;
+    align-items:center;
+    gap: 12px;
+    border: 1px solid rgba(255,255,255,0.18);
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    transition: border-color .2s ease, color .2s ease;
+  }
+  .footer-social:hover{ border-color: var(--gold); color: var(--gold); }
+  .footer-bottom{
+    padding: 26px 0 36px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 980px){
+    .hero-inner{ grid-template-columns: 1fr; }
+    .hero-seal{ justify-self:start; width:170px; height:170px; }
+    .about-grid{ grid-template-columns: 1fr; gap: 50px; }
+    .course-grid{ grid-template-columns: repeat(2, 1fr); }
+    .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
+    .gallery-item.wide{ grid-column: span 2; }
+    .contact-grid{ grid-template-columns: 1fr; gap: 50px; }
+    .contact-info{ border-left:none; padding-left:0; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 40px; }
+    .footer-grid{ grid-template-columns: 1fr; gap: 40px; }
+  }
+  @media (max-width: 760px){
+    .nav-links{
+      position:fixed;
+      top: 78px; left:0; right:0;
+      flex-direction:column;
+      background: rgba(246,243,236,0.98);
+      backdrop-filter: blur(10px);
+      padding: 30px 32px;
+      gap: 22px;
+      align-items:flex-start;
+      transform: translateY(-12px);
+      opacity:0;
+      pointer-events:none;
+      transition: all .25s ease;
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-links.open{ transform: translateY(0); opacity:1; pointer-events:all; }
+    .nav-right .btn{ display:none; }
+    .nav-toggle{ display:flex; }
+    .hero-inner{ padding-top: 130px; }
+    .hero-actions{ flex-direction:column; align-items:flex-start; }
+    .hero-actions .btn{ width:100%; }
+    section{ padding: 80px 0; }
+    .form-row{ grid-template-columns: 1fr; }
+    .course-grid{ grid-template-columns: 1fr; }
+    .gallery-grid{ grid-template-columns: repeat(2, 1fr); grid-auto-rows: 140px; }
+    .footer-bottom{ flex-direction:column; align-items:flex-start; }
+  }
+
+  /* focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .hero-seal, .hero-seal-inner{ animation: none; }
+    *{ transition-duration: 0.01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#home" class="brand">
+      <div class="brand-mark"><img src="https://i.postimg.cc/nLPnwqmg/273594853-4962847860473757-4022128085073493434-n.jpg" alt="Amity Institute logo"></div>
+      <div class="brand-text">
+        <div class="name">Amity Institute</div>
+        <div class="sub">Biratnagar, Nepal</div>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#courses">Courses</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#contact" class="btn btn-gold">Enquire Now</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-top">
+    <div class="eyebrow">Loksewa &amp; Banking Preparation · Biratnagar</div>
+    <h1>Shaping the <em>Next Generation</em> of Nepal's Civil Servants</h1>
+    <p>Amity Institute, Biratnagar — where aspiration turns into administrative reality. Get the exact strategies, high-yield resources, and analytical skills to ace your Public Service Commission exams.</p>
+    <div class="hero-actions">
+      <a href="#courses" class="btn btn-gold">Explore Courses</a>
+      <a href="#contact" class="btn btn-outline">Get Free Counseling</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="label">Preparing aspirants for</div>
+      <div class="hero-trust-row">
+        <span>Lok Sewa Aayog</span>
+        <span>Section Officer</span>
+        <span>Naib Subba</span>
+        <span>Kharidar</span>
+        <span>Banking Sector Exams</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="https://i.postimg.cc/nLPnwqmg/273594853-4962847860473757-4022128085073493434-n.jpg" alt="Amity Institute campus and students">
+    <div class="hero-scroll">
+      <div class="ring">↓</div>
+      <span>Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-portrait">
+      <div class="quote-mark">"</div>
+      <div class="frame">
+        <img src="https://i.postimg.cc/VLpB1h8q/672343261-977506828168436-7316147109972217902-n.jpg" alt="Ram Naresh Yadav, Founding Leader of Amity Institute">
+      </div>
+      <div class="caption">
+        <div>
+          <div class="name">Ram Naresh Yadav</div>
+          <div class="role">Founding Leader, Amity Institute</div>
+        </div>
+        <div class="role">— A Key For Success</div>
+      </div>
+    </div>
+
+    <div class="about-copy">
+      <div class="eyebrow">About Us &amp; Leadership</div>
+      <h2>Direct Guidance from Veteran Leadership</h2>
+      <p class="lead">Under the leadership and direct guidance of our respected leader, Ram Naresh Yadav, we offer the most comprehensive and rigorous Lok Sewa preparation classes in Nepal.</p>
+      <p>Our mission is simple: to provide aspirants with the exact strategies, high-yield resources, and analytical writing skills needed to ace the Public Service Commission exams. With a team of veteran civil servants and a curriculum crafted by top educators, we give your dedication the direction it deserves.</p>
+      <p>Join us, and take your first step toward a prestigious career in public service.</p>
+
+      <div class="about-stats">
+        <div class="stat">
+          <div class="num">04</div>
+          <div class="label">Exam Tracks</div>
+        </div>
+        <div class="stat">
+          <div class="num">100%</div>
+          <div class="label">Syllabus Aligned</div>
+        </div>
+        <div class="stat">
+          <div class="num">12+</div>
+          <div class="label">Class Pass Entry</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COURSES ================= -->
+<section class="courses" id="courses">
+  <div class="container">
+    <div class="section-head center" style="margin: 0 auto 64px;">
+      <div class="eyebrow center dark">Our Preparation Programs</div>
+      <h2>Targeted, Syllabus-Aligned Classes for Ultimate Exam Success</h2>
+      <p>Choose the track built for the exam you're preparing for — each program follows the official syllabus and exam pattern.</p>
+    </div>
+  </div>
+
+  <div class="container" style="padding:0;">
+    <div class="course-grid">
+
+      <div class="course-card">
+        <div class="index">Track 01</div>
+        <div class="devnagari">शाखा अधिकृत</div>
+        <h3>Section Officer</h3>
+        <p>Comprehensive preparation for the Section Officer exam — covering general knowledge, written analysis, and administrative aptitude.</p>
+        <div class="meta">
+          <span>Duration <b>—</b></span>
+          <span>Shift <b>—</b></span>
+          <span>Syllabus <b>Coming Soon</b></span>
+          <span>Eligibility <b>Bachelor's Degree</b></span>
+        </div>
+        <div class="cta-row"><a href="#contact">Enquire about this course</a></div>
+      </div>
+
+      <div class="course-card">
+        <div class="index">Track 02</div>
+        <div class="devnagari">नायब सुब्बा</div>
+        <h3>Naib Subba</h3>
+        <p>Structured coaching for the Naib Subba examination, with focused practice on Nepali &amp; English writing, GK, and numerical ability.</p>
+        <div class="meta">
+          <span>Duration <b>—</b></span>
+          <span>Shift <b>—</b></span>
+          <span>Syllabus <b>Coming Soon</b></span>
+          <span>Eligibility <b>+2 / Class 12</b></span>
+        </div>
+        <div class="cta-row"><a href="#contact">Enquire about this course</a></div>
+      </div>
+
+      <div class="course-card">
+        <div class="index">Track 03</div>
+        <div class="devnagari">खरिदार</div>
+        <h3>Kharidar</h3>
+        <p>Foundational and advanced batches for the Kharidar exam — building strong fundamentals in GK, IQ, and Nepali language.</p>
+        <div class="meta">
+          <span>Duration <b>—</b></span>
+          <span>Shift <b>—</b></span>
+          <span>Syllabus <b>Coming Soon</b></span>
+          <span>Eligibility <b>+2 / Class 12</b></span>
+        </div>
+        <div class="cta-row"><a href="#contact">Enquire about this course</a></div>
+      </div>
+
+      <div class="course-card">
+        <div class="index">Track 04</div>
+        <div class="devnagari">बैंकिङ्ग तयारी</div>
+        <h3>Banking Exams</h3>
+        <p>Tier-1 bank exam coaching covering quantitative aptitude, English, GK, and computer fundamentals for leading Nepali banks.</p>
+        <div class="meta">
+          <span>Duration <b>—</b></span>
+          <span>Shift <b>—</b></span>
+          <span>Syllabus <b>Coming Soon</b></span>
+          <span>Eligibility <b>Bachelor's Degree</b></span>
+        </div>
+        <div class="cta-row"><a href="#contact">Enquire about this course</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">Life at Amity Institute</div>
+      <h2>Visual Campus Gallery</h2>
+      <p>Glimpses of our vibrant learning ecosystem — interactive orientation sessions, modern classrooms, and past topper celebrations.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item tall" data-label="Amity Institute" data-img="https://i.postimg.cc/VLpB1h8q/672343261-977506828168436-7316147109972217902-n.jpg">
+        <img src="https://i.postimg.cc/VLpB1h8q/672343261-977506828168436-7316147109972217902-n.jpg" alt="Amity Institute">
+      </div>
+      <div class="gallery-item tall" data-label="Classroom Sessions" data-img="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=600&auto=format&fit=crop" alt="Students in a classroom session">
+      </div>
+      <div class="gallery-item wide" data-label="Orientation Programs" data-img="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=900&auto=format&fit=crop" alt="Orientation program for students">
+      </div>
+      <div class="gallery-item" data-label="Study Groups" data-img="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600&auto=format&fit=crop" alt="Group study session">
+      </div>
+      <div class="gallery-item" data-label="Lecture Halls" data-img="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=600&auto=format&fit=crop" alt="Lecture hall">
+      </div>
+      <div class="gallery-item" data-label="Topper Celebrations" data-img="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=600&auto=format&fit=crop" alt="Celebration event">
+      </div>
+      <div class="gallery-item wide" data-label="Modern Campus" data-img="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=900&auto=format&fit=crop" alt="Modern campus building">
+      </div>
+      <div class="gallery-item tall" data-label="Library & Resources" data-img="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop">
+        <img src="https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=600&auto=format&fit=crop" alt="Library resources">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <img id="lbImage" src="" alt="">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="section-head" style="margin-bottom:40px;">
+        <div class="eyebrow dark">Begin Your Journey</div>
+        <h2>Begin Your Journey to Public Service</h2>
+        <p>Share a few details and our counselling team will guide you toward the right preparation track.</p>
+      </div>
+
+      <form id="enquiryForm" onsubmit="return handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="98XXXXXXXX" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label for="course">Interested Course</label>
+          <select id="course" name="course" required>
+            <option value="" disabled selected>Select a course</option>
+            <option value="section-officer">Section Officer (शाखा अधिकृत)</option>
+            <option value="naib-subba">Naib Subba (नायब सुब्बा)</option>
+            <option value="kharidar">Kharidar (खरिदार)</option>
+            <option value="banking">Banking Exams</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message / Query</label>
+          <textarea id="message" name="message" placeholder="Tell us a little about your goals..."></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn btn-gold">Send Enquiry</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="contact-info">
+      <div class="info-block">
+        <div class="eyebrow dark">Visit Us</div>
+        <p>2nd Floor, Himalaya Road,<br>Opposite of Mainali Pustak Bhandar,<br>Biratnagar, Nepal</p>
+      </div>
+      <div class="info-block">
+        <div class="eyebrow dark">Call Us</div>
+        <a href="tel:+9779852030060">+977 985-2030060 (NTC)</a>
+        <a href="tel:+9779842447787">+977 984-2447787 (NTC)</a>
+        <a href="tel:+9779826317677">+977 982-6317677 (NCELL)</a>
+      </div>
+      <div class="info-block">
+        <div class="eyebrow dark">Email Us</div>
+        <a href="mailto:rnyadav9842447787@gmail.com">rnyadav9842447787@gmail.com</a>
+      </div>
+      <div class="info-note">
+        Office hours vary day by day. Please call or drop an enquiry to schedule a visit.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= MAP ================= -->
+<section class="map-section">
+  <iframe
+    src="https://www.google.com/maps?q=Himalaya+Road,+Biratnagar,+Nepal&output=embed"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Amity Institute location on Himalaya Road, Biratnagar">
+  </iframe>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-mark"><img src="https://i.postimg.cc/nLPnwqmg/273594853-4962847860473757-4022128085073493434-n.jpg" alt="Amity Institute logo"></div>
+        <div>
+          <div class="name">Amity Institute</div>
+          <p>Guided by veteran civil servants and educators, preparing dedicated aspirants for Nepal's Loksewa and banking examinations from our centre in Biratnagar.</p>
+          <div class="footer-tagline">"A Key For Success"</div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li>
+            <a class="footer-social" href="https://www.facebook.com/amitynp" target="_blank" rel="noopener noreferrer">
+              Facebook — Amity Institute
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Amity Institute. All Rights Reserved.</span>
+      <span>Built for Class 12+ Loksewa Aspirants.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Sticky header background on scroll
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // Lightbox gallery
+  const lightbox = document.getElementById('lightbox');
+  const lbImage = document.getElementById('lbImage');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbClose = document.getElementById('lbClose');
+
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      lbImage.src = item.getAttribute('data-img');
+      lbImage.alt = item.getAttribute('data-label');
+      lbCaption.textContent = item.getAttribute('data-label');
+      lightbox.classList.add('open');
+    });
+  });
+  lbClose.addEventListener('click', () => lightbox.classList.remove('open'));
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.classList.remove('open');
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') lightbox.classList.remove('open');
+  });
+
+  // Form submit (static site — show confirmation only)
+  function handleSubmit(e){
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = 'Enquiry Sent ✓';
+    e.target.reset();
+    setTimeout(() => { btn.textContent = original; }, 2500);
+    return false;
+  }
+
+  // Footer year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
